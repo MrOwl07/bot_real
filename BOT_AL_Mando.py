@@ -21,3 +21,4 @@ async def pasw(ctx):
 
 bot.run("MTIzOTk4NTA5OTU4MDI0ODA4NA.GZ28rj.wd3y1ppa6vMLfxiqnzN0UpXMxGFH6wzaWyTdR8")
 
+#creacion
