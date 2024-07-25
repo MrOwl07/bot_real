@@ -9,7 +9,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
-token = "MTIzOTk4NTA5OTU4MDI0ODA4NA.GZ28rj.wd3y1ppa6vMLfxiqnzN0UpXMxGFH6wzaWyTdR8"
+token = "INGRESE EL TOKEN"
 
 
 @bot.event
