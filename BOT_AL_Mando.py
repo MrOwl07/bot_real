@@ -1,7 +1,7 @@
 import discord
 import os
 from discord.ext import commands
-from bot_logic import gen_pass
+import bot_logic as BL
 import random as r
 import requests
 import comand_api as c
@@ -25,14 +25,15 @@ async def hello(ctx):
     
 #comando para crear contraseña
 @bot.command(name = "Password")
-async def pasw(ctx,a,b):
+async def pasw(ctx,a:str,b:int):
     nombre = str(a)
-    await ctx.send(gen_pass(b)+nombre)
+    ctr = BL.gen_pass(b)
+    await ctx.send(f"Su contraseña es: {ctr}{nombre}")
 
 #comando para generar una suma de dos digitos
 @bot.command(name="suma")
-async def sumar(ctx,a,b):
-    response = int(a) + int(b)
+async def sumar(ctx,a:int,b:int):
+    response = BL.suma(a,b)
     await ctx.send(f"la suma es:{response}")
 
 #comando que rastrea una imagen dentro de una carpeta
