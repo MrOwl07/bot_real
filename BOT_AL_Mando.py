@@ -3,7 +3,6 @@ import os
 from discord.ext import commands
 import bot_logic as BL
 import random as r
-import requests
 import comand_api as c
 from dotenv import load_dotenv
 
@@ -12,7 +11,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
-token = os.getenv("dt")
+token = os.getenv("dt") #creacion de archivo .env para almacenar de forma segura el TOKEN
 
 
 @bot.event
@@ -46,9 +45,7 @@ async def mem(ctx):
 #Comando para arrojar un meme aleatorio desde la carpeta local
 @bot.command(name = "momos")
 async def momo(ctx):
-    img_mem = r.choice(os.listdir("Memes"))
-    with open(f"Memes/{img_mem}","rb") as f:
-        picture = discord.File(f)
+    picture = BL.meminos()
     await ctx.send(file = picture)
 #Comando para activar API de img random de patos
 @bot.command(name = "patos")
